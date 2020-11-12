@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,10 +9,13 @@ public class CardController : MonoBehaviour
     public int noOfCards;
 
     [SerializeField] Button shuffleBtn, discardBtn;
-    [SerializeField] List<GameObject> cardsInDeck = new List<GameObject>();
+    public List<GameObject> cardsInDeck = new List<GameObject>();
     [SerializeField] List<GameObject> cardsInHand = new List<GameObject>();
-    [SerializeField] List<GameObject> cardsInBin = new List<GameObject>();
+    public List<GameObject> cardsInBin = new List<GameObject>();
     [SerializeField] GameObject cardSample;
+    [SerializeField] GameObject HandPanel;
+    [SerializeField] List<GameObject> cardHolder = new List<GameObject>();
+    [SerializeField] Transform t;
     
     // Start is called before the first frame update
     void Start()
@@ -24,11 +28,40 @@ public class CardController : MonoBehaviour
 
         for (int i = 0; i < noOfCards; i++)
         {
-            GameObject card = Instantiate(cardSample);
-            card.GetComponent<CardManager>().value = i;
+            GameObject card = Instantiate(cardSample,t, false);
+            card.GetComponent<CardManager>().value = i+1;
             card.GetComponent<CardManager>().cardState = CardManager.CardState.InDeck;
-            cardsInDeck.Add(Instantiate(card));
-        }    
+            card.GetComponentInChildren<TextMeshProUGUI>().text = card.GetComponent<CardManager>().value.ToString();
+            cardHolder.Add(card);
+            cardsInDeck.Add(card);
+        }   
+    }
+
+    private void Update()
+    {
+        //for (int i = 0; i < cardHolder.Count; i++)
+        //{
+
+        //    switch (cardHolder[i].GetComponent<CardManager>().cardState)
+        //    {
+        //        case CardManager.CardState.InBin:
+        //            gameObject.SetActive(false);
+        //            transform.parent = null;
+        //            break;
+
+        //        case CardManager.CardState.InDeck:
+        //            gameObject.SetActive(true);
+        //            transform.parent = t;
+        //            break;
+
+        //        case CardManager.CardState.InHand:
+        //            gameObject.SetActive(true);
+        //            break;
+
+        //        default:
+        //            break;
+        //    }
+        //}
     }
 
     void OnShuffle()
@@ -37,8 +70,11 @@ public class CardController : MonoBehaviour
         {
             cardsInDeck.AddRange(cardsInBin);
             for (int i = 0; i < cardsInDeck.Count; i++)
+            {
+                cardsInDeck[i].gameObject.SetActive(true);
                 cardsInDeck[i].GetComponent<CardManager>().cardState = CardManager.CardState.InDeck;
-
+                
+            }
             cardsInBin.Clear();
         }
 
@@ -54,13 +90,23 @@ public class CardController : MonoBehaviour
                 {
                     cardsInHand.Add(cardsInDeck[j]);
                     for (int k = 0; k < cardsInHand.Count; k++)
+                    {
                         cardsInHand[k].GetComponent<CardManager>().cardState = CardManager.CardState.InHand;
+                        cardsInHand[k].transform.SetParent(HandPanel.transform, false) ;
+                        
+                        cardsInHand[k].GetComponent<CanvasGroup>().blocksRaycasts = true;
+                    }
                     cardsInDeck.RemoveAt(j);
                 }
             }
             else
             {
                 cardsInHand.AddRange(cardsInDeck);
+                for (int k = 0; k < cardsInHand.Count; k++)
+                {
+                    cardsInHand[k].GetComponent<CardManager>().cardState = CardManager.CardState.InHand;
+                    cardsInHand[k].transform.SetParent(HandPanel.transform, false);
+                }
                 cardsInDeck.Clear();
             }
         }
@@ -68,6 +114,7 @@ public class CardController : MonoBehaviour
 
     void OnDiscard()
     {
+
         cardsInBin.AddRange(cardsInHand);
         for (int i = 0; i < cardsInBin.Count; i++)
             cardsInBin[i].GetComponent<CardManager>().cardState = CardManager.CardState.InBin;
