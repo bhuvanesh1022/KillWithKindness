@@ -33,7 +33,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             GetComponent<Image>().raycastTarget = false;
         }
         GetComponent<CanvasGroup>().alpha = 1f;
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
+        
     }
 
     

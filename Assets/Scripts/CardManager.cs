@@ -9,6 +9,8 @@ public class CardManager : MonoBehaviour
     public CardState cardState;
     public bool onover;
     public int value;
+    public enum CardPower { Attack , Heal};
+    public CardPower cardPower;
 
     void Start()
     {
@@ -17,14 +19,8 @@ public class CardManager : MonoBehaviour
 
     void Update()
     {
-        if (onover)
-        {
-
-        }
-        if (!onover)
-        {
-            this.transform.localScale = new Vector2(1, 1);
-        }
+       
+        this.transform.localScale = new Vector2(1, 1);
         
         switch (cardState)
         {
@@ -34,20 +30,16 @@ public class CardManager : MonoBehaviour
                 break;
 
             case CardState.Inchoosen:
-                //GetComponent<Image>().raycastTarget = false;
                 GetComponent<CanvasGroup>().blocksRaycasts = false;
                 break;
 
             case CardState.InDeck:
                 gameObject.SetActive(true);
                 transform.parent = null;
-
                 break;
 
             case CardState.InHand:
                 gameObject.SetActive(true);
-                //GetComponent<Image>().raycastTarget = true;
-                //GetComponent<CanvasGroup>().blocksRaycasts = true;
                 break;
 
             default:

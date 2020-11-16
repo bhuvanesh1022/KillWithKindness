@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class Drop : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointerExitHandler
 {
-    public List<CardManager> cardmanager = new List<CardManager>();
+    public List<CardDisply> card_choose = new List<CardDisply>();
+
     private void Update()
     {
         
@@ -21,32 +22,23 @@ public class Drop : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointerExit
         
     }
 
-
-
     public void OnDrop(PointerEventData eventData)
     {
         Drag d = eventData.pointerDrag.GetComponent<Drag>();
-        CardManager cm = eventData.pointerDrag.GetComponent<CardManager>();
+        
         Debug.Log(eventData.pointerDrag.name + "dropped on" + gameObject.name);
 
         if (d != null)
         {
             d.return_to_parent = this.transform;
-            cm.cardState = CardManager.CardState.Inchoosen;
+            card_choose.add(eventData.pointerDrag);
         }
         
-        
-
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //Drag d = eventData.pointerDrag.GetComponent<Drag>();
-
-        //if (this.gameObject.transform.childCount > 3)
-        //{
-        //    d.transform.SetParent(d.return_to_parent);
-        //}
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)

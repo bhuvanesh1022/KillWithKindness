@@ -39,29 +39,7 @@ public class CardController : MonoBehaviour
 
     private void Update()
     {
-        //for (int i = 0; i < cardHolder.Count; i++)
-        //{
-
-        //    switch (cardHolder[i].GetComponent<CardManager>().cardState)
-        //    {
-        //        case CardManager.CardState.InBin:
-        //            gameObject.SetActive(false);
-        //            transform.parent = null;
-        //            break;
-
-        //        case CardManager.CardState.InDeck:
-        //            gameObject.SetActive(true);
-        //            transform.parent = t;
-        //            break;
-
-        //        case CardManager.CardState.InHand:
-        //            gameObject.SetActive(true);
-        //            break;
-
-        //        default:
-        //            break;
-        //    }
-        //}
+     
     }
 
     void OnShuffle()
