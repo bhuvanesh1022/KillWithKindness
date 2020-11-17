@@ -34,9 +34,13 @@ public class CardController : MonoBehaviour
 
     public GameObject enemy_attack;
     public List<GameObject> enemy_card = new List<GameObject>();
+    public TextMeshProUGUI winnerText;
+    
     // Start is called before the first frame update
     void Start()
     {
+        EnemySlider.value = 10f;
+        PlayerSlider.value = 10f;
         shuffleBtn.onClick.RemoveAllListeners();
         shuffleBtn.onClick.AddListener(OnShuffle);
         panel.SetActive(false);
@@ -51,6 +55,7 @@ public class CardController : MonoBehaviour
             card.GetComponent<Image>().color = cardsScriptableObjects[i].color;
             cardHolder.Add(card);
             cardsInDeck.Add(card);
+            
         }
        
 
@@ -62,18 +67,34 @@ public class CardController : MonoBehaviour
         cardsInDeckCount.text = cardsInDeck.Count.ToString();
         if (EnemySlider.value == 0)
         {
+            enemy_attack.SetActive(false);
             gameOverPanel.SetActive(true);
+            winnerText.text=
+                "You Have Won the Game";
+            
+            Time.timeScale = 0;
+        }
+        else if(PlayerSlider.value == 0)
+        {
+            enemy_attack.SetActive(false);
+            gameOverPanel.SetActive(true);
+            winnerText.text =
+                "Opponent Won the Game";
+            
+            Time.timeScale = 0;
         }
         else
         {
             gameOverPanel.SetActive(false);
+           
         }
 
     }
 
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+       Application.Quit();
+       
     }
 
     void OnShuffle()
@@ -183,6 +204,46 @@ public class CardController : MonoBehaviour
         panel.SetActive(false);
         attackPoint.gameObject.SetActive(false);
         healPoint.gameObject.SetActive(false);
-        
+        shuffleBtn.interactable = false;
+        StartCoroutine(Enemy_Card());
     }
+
+    IEnumerator Enemy_Card()
+    {
+        enemy_attack.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        
+        for (int i = 0; i < 3; i++)
+        {
+            int random = Random.Range(0, cardsScriptableObjects.Count);
+            panel.SetActive(true);
+            string name =cardsScriptableObjects[random].power_name ;
+            int number =cardsScriptableObjects[random].power_number ;
+            Debug.Log(name+"  number"+number);
+            card.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text=name;
+            card.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text=number.ToString();
+            if (name.ToString() == "Attack")
+            {
+                PlayerSlider.value -= number;
+                Debug.Log("HIT"+EnemySlider.value);
+                healPoint.gameObject.SetActive(true);
+                healPoint.text = "-"+ number.ToString();
+                yield return new WaitForSeconds(0.3f);
+            }
+            else if (name.ToString() == "Heal")
+            {
+                EnemySlider.value += number;
+                attackPoint.gameObject.SetActive(true);
+                attackPoint.text = "+"+number.ToString();
+                yield return new WaitForSeconds(0.3f);
+            }
+            healPoint.gameObject.SetActive(false);
+            attackPoint.gameObject.SetActive(false);
+            yield return new WaitForSeconds(1f);
+        }
+        panel.SetActive(false);
+        enemy_attack.SetActive(false);
+        shuffleBtn.interactable = true;
+    }
+    
 }
