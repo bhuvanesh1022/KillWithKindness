@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.797486, y: 0.41214818}
   m_AnchorMax: {x: 0.94523126, y: 0.6557037}
-  m_AnchoredPosition: {x: -1.1999512, y: 0.5}
+  m_AnchoredPosition: {x: -1.1992188, y: 0.5}
   m_SizeDelta: {x: 6.6361084, y: 2.9315186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &128600836
@@ -459,7 +459,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.051187508, y: 0.41214818}
   m_AnchorMax: {x: 0.20143756, y: 0.6557037}
-  m_AnchoredPosition: {x: 0.5999756, y: 0.5}
+  m_AnchoredPosition: {x: 0.6015625, y: 0.5}
   m_SizeDelta: {x: 1.6361084, y: 2.9315186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &245910911
@@ -536,7 +536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.44352084, y: 0.36585188}
   m_AnchorMax: {x: 0.56, y: 0.45200002}
-  m_AnchoredPosition: {x: 2.5090027, y: -1.1600037}
+  m_AnchoredPosition: {x: 2.5090332, y: -1.1601562}
   m_SizeDelta: {x: -2.539978, y: 3}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &250401027
@@ -582,9 +582,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DrawCards, Assembly-CSharp
-        m_MethodName: Onclick
+      - m_Target: {fileID: 2010504333}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: OnclickConfirm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -679,10 +679,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e7aa962c3e93463199f4d21d57b93af, type: 2}
   card_in_hand: []
   Deck: []
+  Bin: []
   card_prefab: {fileID: 7753906670626864996, guid: 4ab9aaff81a644b5490c2af33c39f3ed, type: 3}
   Cards_in_hand: 5
   Holder: {fileID: 1306383128}
   card_Hand: {fileID: 1385041362}
+  drop: {fileID: 662521013}
 --- !u!4 &365591520
 Transform:
   m_ObjectHideFlags: 0
@@ -885,7 +887,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 921656885}
   m_FillRect: {fileID: 1948898232}
   m_HandleRect: {fileID: 921656884}
@@ -974,7 +976,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 735318489}
   m_FillRect: {fileID: 517958113}
   m_HandleRect: {fileID: 735318488}
@@ -1153,7 +1155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2270afddc76247328f4aba79b34eed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardmanager: []
+  card_choose: []
 --- !u!114 &662521014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2541,6 +2543,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948898231}
   m_CullTransparentMesh: 0
+--- !u!1 &2010504332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2010504334}
+  - component: {fileID: 2010504333}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2010504333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010504332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a48ac6901e4814a909b6df0b3e97934b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drop: {fileID: 662521013}
+  playerHealthBar: {fileID: 644086408}
+  enemyHealthBar: {fileID: 624462423}
+  CardInstantiate: {fileID: 365591519}
+--- !u!4 &2010504334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010504332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 900.8701, y: 589.06067, z: -578.24493}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2039001559
 GameObject:
   m_ObjectHideFlags: 0

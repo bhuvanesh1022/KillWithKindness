@@ -7,10 +7,10 @@ public class CardManager : MonoBehaviour
 {
     public enum CardState {InDeck, InHand, InBin , Inchoosen};
     public CardState cardState;
-    public bool onover;
-    public int value;
-    public enum CardPower { Attack , Heal};
-    public CardPower cardPower;
+    //public bool onover;
+    //public int value;
+    //public enum CardPower { Attack , Heal};
+    //public CardPower cardPower;
 
     void Start()
     {

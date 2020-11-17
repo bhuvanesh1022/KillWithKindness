@@ -188,7 +188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardState: 0
+  onover: 0
   value: 0
+  cardPower: 0
 --- !u!114 &4325246666249950479
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Drop : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointerExitHandler
 {
     public List<CardDisply> card_choose = new List<CardDisply>();
+    public Button choose;
 
     private void Update()
     {
@@ -14,10 +15,12 @@ public class Drop : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointerExit
         if (this.transform.childCount == 3)
         {
             GetComponent<Image>().raycastTarget = false;
+            choose.gameObject.SetActive(true);
         }
         if (this.transform.childCount < 3)
         {
             GetComponent<Image>().raycastTarget = true;
+            choose.gameObject.SetActive(false);
         }
         
     }
@@ -31,7 +34,7 @@ public class Drop : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointerExit
         if (d != null)
         {
             d.return_to_parent = this.transform;
-            card_choose.add(eventData.pointerDrag);
+            card_choose.Add(eventData.pointerDrag.gameObject.GetComponent<CardDisply>());
         }
         
     }

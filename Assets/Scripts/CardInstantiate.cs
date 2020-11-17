@@ -8,6 +8,7 @@ public class CardInstantiate : MonoBehaviour
     public List<Card> card_list = new List<Card>();
     public List<GameObject> card_in_hand = new List<GameObject>();
     public List<GameObject> Deck = new List<GameObject>();
+    public List<GameObject> Bin = new List<GameObject>();
     public GameObject card_prefab;
     public int Cards_in_hand = 5;
     public Transform Holder;
@@ -48,7 +49,8 @@ public class CardInstantiate : MonoBehaviour
             
         }
     }
-
+    
+    
     
     // Update is called once per frame
     void Update()
@@ -56,18 +58,4 @@ public class CardInstantiate : MonoBehaviour
         
     }
 
-    public void Onclick()
-    {
-        StartCoroutine(ChooseCards());
-    }
-
-    IEnumerator ChooseCards()
-    {
-        for (int i = 0; i == drop.card_choose.Count ; i++)
-        {
-            yield return new WaitForSeconds(1f);
-            //drop.cardmanager[i].
-        }
-        
-    }
 }
