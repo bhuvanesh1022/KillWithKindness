@@ -12,6 +12,7 @@ public class CardController : MonoBehaviour
     [SerializeField] Button shuffleBtn;
     public Button discardBtn;
     public  List<Card> cardsScriptableObjects = new  List<Card>();
+    public List<Card> enemyScriptableObjects = new List<Card>();
     public List<GameObject> cardsInDeck = new List<GameObject>();
     [SerializeField] List<GameObject> cardsInHand = new List<GameObject>();
     public List<GameObject> cardsInBin = new List<GameObject>();
@@ -35,7 +36,6 @@ public class CardController : MonoBehaviour
     public GameObject enemy_attack;
     public List<GameObject> enemy_card = new List<GameObject>();
     public TextMeshProUGUI winnerText;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -118,8 +118,8 @@ public class CardController : MonoBehaviour
             if (cardsInDeck.Count > 5)
             {
                 
-                //for (int i = 0; i < 5; i++) r.Add(Random.Range(0, cardsInDeck.Count));
-                for (int i = 0; i < 5; i++) r.Add(UnityEngine.Random.Range(0,cardsInDeck.Count));
+                for (int i = 0; i < 5; i++) r.Add(Random.Range(0, cardsInDeck.Count));
+                
                 
                 for (int j = 0; j < r.Count; j++)
                 {
@@ -174,6 +174,7 @@ public class CardController : MonoBehaviour
                 EnemySlider.value -= power;
                 Debug.Log("HIT"+EnemySlider.value);
                 attackPoint.gameObject.SetActive(true);
+                attackPoint.color = new Color(255,0,0,255);
                 attackPoint.text = "-" + power.ToString();
                 yield return new WaitForSeconds(0.3f);
             }
@@ -181,6 +182,7 @@ public class CardController : MonoBehaviour
             {
                 PlayerSlider.value += power;
                 healPoint.gameObject.SetActive(true);
+                healPoint.color = new Color(0, 1, 0, 1);
                 healPoint.text = "+"+power.ToString();
                 yield return new WaitForSeconds(0.3f);
             }
@@ -213,12 +215,12 @@ public class CardController : MonoBehaviour
         enemy_attack.SetActive(true);
         yield return new WaitForSeconds(2f);
         
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 1; i++)
         {
-            int random = Random.Range(0, cardsScriptableObjects.Count);
+            int random = Random.Range(0, enemyScriptableObjects.Count);
             panel.SetActive(true);
-            string name =cardsScriptableObjects[random].power_name ;
-            int number =cardsScriptableObjects[random].power_number ;
+            string name =enemyScriptableObjects[random].power_name ;
+            int number =enemyScriptableObjects[random].power_number ;
             Debug.Log(name+"  number"+number);
             card.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text=name;
             card.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text=number.ToString();
@@ -227,6 +229,7 @@ public class CardController : MonoBehaviour
                 PlayerSlider.value -= number;
                 Debug.Log("HIT"+EnemySlider.value);
                 healPoint.gameObject.SetActive(true);
+                healPoint.color = new Color(124,252,0,255);
                 healPoint.text = "-"+ number.ToString();
                 yield return new WaitForSeconds(0.3f);
             }
@@ -234,6 +237,7 @@ public class CardController : MonoBehaviour
             {
                 EnemySlider.value += number;
                 attackPoint.gameObject.SetActive(true);
+                attackPoint.color = new Color(0, 1, 0, 1);
                 attackPoint.text = "+"+number.ToString();
                 yield return new WaitForSeconds(0.3f);
             }

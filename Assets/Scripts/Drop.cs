@@ -36,6 +36,10 @@ public class Drop : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointerExit
             d.return_to_parent = this.transform;
             card_choose.Add(eventData.pointerDrag.gameObject.GetComponent<CardDisply>());
         }
+        if(d.return_to_parent.name == "HandPanel")
+        {
+            GetComponent<Image>().raycastTarget = true;
+        }
         
     }
 

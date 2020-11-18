@@ -568,6 +568,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a6b9a12df756c4bbda4f8308f584f2ba, type: 2}
   - {fileID: 11400000, guid: 7b952999d29254578a87c06dc6d7ce89, type: 2}
   - {fileID: 11400000, guid: 0e7aa962c3e93463199f4d21d57b93af, type: 2}
+  enemyScriptableObjects:
+  - {fileID: 11400000, guid: b3a0870c05c8e423bb0767b8665a1943, type: 2}
+  - {fileID: 11400000, guid: a172409dace804b09a187baa2fe78d26, type: 2}
+  - {fileID: 11400000, guid: 0e7aa962c3e93463199f4d21d57b93af, type: 2}
+  - {fileID: 11400000, guid: 628e3e7869a894d9f9dcdf2030a5b2be, type: 2}
   cardsInDeck: []
   cardsInHand: []
   cardsInBin: []
@@ -1507,7 +1512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &651252597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2578,8 +2583,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255392
-  m_fontColor: {r: 0.12519145, g: 1, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3211,9 +3216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Restart
-
-'
+  m_text: QUIT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3948,7 +3951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1919665614
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4114,8 +4117,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280680703
-  m_fontColor: {r: 1, g: 0, b: 0.1487732, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4239,7 +4242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choose
+  m_text: Confirm
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}

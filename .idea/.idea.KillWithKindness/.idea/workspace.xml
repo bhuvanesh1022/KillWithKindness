@@ -20,8 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d08cb0c-ac84-4771-9084-c325954f50f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Objects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Objects/Cards.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Objects/Cards/CardParent.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Objects/Cards/CardParent.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InitialScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InitialScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/cards-circularSettings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/cards-circularSettings.lighting.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +50,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ScoreManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Drop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CardController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Drag.cs" />
       </list>
     </option>
   </component>
@@ -98,7 +108,9 @@
       <workItem from="1604995652116" duration="63000" />
       <workItem from="1605514636925" duration="9641000" />
       <workItem from="1605534245669" duration="7585000" />
-      <workItem from="1605590112956" duration="6722000" />
+      <workItem from="1605590112956" duration="7449000" />
+      <workItem from="1605604898328" duration="1874000" />
+      <workItem from="1605674251607" duration="669000" />
     </task>
     <servers />
   </component>
