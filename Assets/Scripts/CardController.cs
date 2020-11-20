@@ -22,7 +22,7 @@ public class CardController : MonoBehaviour
     [SerializeField] Transform t;
 
     public TextMeshProUGUI cardsInDeckCount;
-    public TextMeshProUGUI cardsInBinCount;
+    //public TextMeshProUGUI cardsInBinCount;
     public Slider PlayerSlider;
     public Slider EnemySlider;
     public Drop drop;
@@ -36,6 +36,13 @@ public class CardController : MonoBehaviour
     public GameObject enemy_attack;
     public List<GameObject> enemy_card = new List<GameObject>();
     public TextMeshProUGUI winnerText;
+
+   
+
+    public TextMeshProUGUI maxValueResistance;
+    public TextMeshProUGUI maxValueEnthusiasm;
+    public TextMeshProUGUI currentEnthusiasm;
+    public TextMeshProUGUI currentResistance;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,19 +59,19 @@ public class CardController : MonoBehaviour
             GameObject card = Instantiate(cardSample,t, false);
             card.GetComponent<CardManager>().cardState = CardManager.CardState.InDeck;
             card.GetComponent<CardDisply>().card = cardsScriptableObjects[i];
-            card.GetComponent<Image>().color = cardsScriptableObjects[i].color;
             cardHolder.Add(card);
             cardsInDeck.Add(card);
-            
         }
-       
-
-        
     }
+    
 
     private void Update()
     {
         cardsInDeckCount.text = cardsInDeck.Count.ToString();
+        maxValueEnthusiasm.text = PlayerSlider.maxValue.ToString();
+        currentEnthusiasm.text = PlayerSlider.value.ToString();
+        maxValueResistance.text = EnemySlider.maxValue.ToString();
+        currentResistance.text = EnemySlider.value.ToString();
         if (EnemySlider.value == 0)
         {
             enemy_attack.SetActive(false);
@@ -165,7 +172,7 @@ public class CardController : MonoBehaviour
             string name = drop.card_choose[i].GetComponent<CardDisply>().card.power_name;
             int power = drop.card_choose[i].GetComponent<CardDisply>().card.power_number;
             Debug.Log(name + power);
-            card.GetComponent<Image>().color = drop.card_choose[i].GetComponent<Image>().color;
+            card.GetComponent<Image>().sprite = drop.card_choose[i].GetComponent<Image>().sprite;
             card.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = name;
             card.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = power.ToString();
             drop.card_choose[i].GetComponent<CanvasGroup>().alpha = 0f;
@@ -182,7 +189,7 @@ public class CardController : MonoBehaviour
             {
                 PlayerSlider.value += power;
                 healPoint.gameObject.SetActive(true);
-                healPoint.color = new Color(0, 1, 0, 1);
+                healPoint.color = new Color32(54,198,32,255);
                 healPoint.text = "+"+power.ToString();
                 yield return new WaitForSeconds(0.3f);
             }
@@ -194,7 +201,7 @@ public class CardController : MonoBehaviour
         
         for (int i = 0; i < cardsInBin.Count; i++)
         {
-            cardsInBinCount.text = cardsInBin.Count.ToString();
+            //cardsInBinCount.text = cardsInBin.Count.ToString();
             cardsInBin[i].GetComponent<CardManager>().cardState = CardManager.CardState.InBin;
             cardsInBin[i].GetComponent<CardManager>().gameObject.SetActive(false);
             cardsInBin[i].GetComponent<Drag>().return_to_parent = null;
@@ -237,7 +244,7 @@ public class CardController : MonoBehaviour
             {
                 EnemySlider.value += number;
                 attackPoint.gameObject.SetActive(true);
-                attackPoint.color = new Color(0, 1, 0, 1);
+                attackPoint.color = new Color32(54,198,32,255);
                 attackPoint.text = "+"+number.ToString();
                 yield return new WaitForSeconds(0.3f);
             }

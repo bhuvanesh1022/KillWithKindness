@@ -50,6 +50,6 @@ public class Drop : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointerExit
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        //Debug.Log("onexit");
+       
     }
 }

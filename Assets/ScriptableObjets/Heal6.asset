@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power_name: Heal
   power_number: 3
-  color: {r: 0.33835563, g: 1, b: 0.2688679, a: 0.49803922}
+  card_image: {fileID: 21300000, guid: c31e40961b2d9406dbd17c1aaa1d2ed9, type: 3}

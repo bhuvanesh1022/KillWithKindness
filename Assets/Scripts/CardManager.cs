@@ -7,10 +7,6 @@ public class CardManager : MonoBehaviour
 {
     public enum CardState {InDeck, InHand, InBin , Inchoosen};
     public CardState cardState;
-    //public bool onover;
-    //public int value;
-    //public enum CardPower { Attack , Heal};
-    //public CardPower cardPower;
 
     void Start()
     {
@@ -20,7 +16,7 @@ public class CardManager : MonoBehaviour
     void Update()
     {
        
-        this.transform.localScale = new Vector2(1, 1);
+        transform.localScale = new Vector2(1, 1);
         
         switch (cardState)
         {
