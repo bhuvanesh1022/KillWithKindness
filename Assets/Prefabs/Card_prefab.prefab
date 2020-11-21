@@ -378,6 +378,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   return_to_parent: {fileID: 0}
+  onHover: 0
+  isSelected: 0
 --- !u!225 &7961085884936367820
 CanvasGroup:
   m_ObjectHideFlags: 0

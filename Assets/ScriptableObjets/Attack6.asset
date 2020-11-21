@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51832457918c446eb81d9cc607d2533, type: 3}
   m_Name: Attack6
   m_EditorClassIdentifier: 
-  power_name: Attack
+  power_name: Listen
   power_number: 2
   card_image: {fileID: 21300000, guid: a7179ccd4212847bba53bd746621e091, type: 3}
+  cardPower: 
+  Cost: 2
+  Determination: 0
+  impacton: 1

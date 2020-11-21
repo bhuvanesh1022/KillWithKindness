@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c51832457918c446eb81d9cc607d2533, type: 3}
-  m_Name: Attack9
+  m_Name: Effects3
   m_EditorClassIdentifier: 
-  power_name: Attack
+  power_name: Heal
   power_number: 3
-  card_image: {fileID: 21300000, guid: a7179ccd4212847bba53bd746621e091, type: 3}
+  card_image: {fileID: 21300000, guid: c31e40961b2d9406dbd17c1aaa1d2ed9, type: 3}
+  cardPower: 
+  Cost: 3
+  Determination: 0
+  impacton: 2

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,8 @@ public class CardManager : MonoBehaviour
 {
     public enum CardState {InDeck, InHand, InBin , Inchoosen};
     public CardState cardState;
-
+    private Ray ray;
+  
     void Start()
     {
         gameObject.SetActive(true);
@@ -15,9 +17,7 @@ public class CardManager : MonoBehaviour
 
     void Update()
     {
-       
-        transform.localScale = new Vector2(1, 1);
-        
+
         switch (cardState)
         {
             case CardState.InBin:
