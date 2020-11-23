@@ -46,7 +46,10 @@ public class CardController : MonoBehaviour
 
     public Slider Assertivness;
     public Slider Empathy;
-    
+
+    public Animator HandPanelAnim;
+
+    public Animator ChoosePanelAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -111,14 +114,13 @@ public class CardController : MonoBehaviour
     }
     void OnShuffle()
     {
-        if (cardsInDeck.Count == 0)
+        if (cardsInDeck.Count < 3)
         {
             cardsInDeck.AddRange(cardsInBin);
             for (int i = 0; i < cardsInDeck.Count; i++)
             {
                 cardsInDeck[i].gameObject.SetActive(true);
                 cardsInDeck[i].GetComponent<CardManager>().cardState = CardManager.CardState.InDeck;
-                
             }
             cardsInBin.Clear();
         }
@@ -129,9 +131,11 @@ public class CardController : MonoBehaviour
 
             if (cardsInDeck.Count > 5)
             {
-                
-                for (int i = 0; i < 5; i++) r.Add(Random.Range(0, cardsInDeck.Count));
-                
+                for (int i = 0; i < 5; i++)
+                {
+                    r.Add(Random.Range(0, cardsInDeck.Count));
+                    Debug.Log(r[i]);
+                }
                 
                 for (int j = 0; j < r.Count; j++)
                 {
@@ -161,15 +165,16 @@ public class CardController : MonoBehaviour
 
     public void OnDiscard()
     {
-        discardBtn.interactable = false;
+        discardBtn.gameObject.SetActive(false);
+        HandPanelAnim.SetBool("choose",true);
         StartCoroutine(CardChoose());
     }
 
     IEnumerator CardChoose()
     {
-        
         Debug.Log("Clicked");
-       
+        ChoosePanelAnim.SetBool("choose",true);
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < drop.card_choose.Count; i++)
         {
             panel.SetActive(true);
@@ -288,6 +293,9 @@ public class CardController : MonoBehaviour
         panel.SetActive(false);
         enemy_attack.SetActive(false);
         shuffleBtn.interactable = true;
+        ChoosePanelAnim.SetBool("choose",false);
+        yield return new WaitForSeconds(0.6f);
+        HandPanelAnim.SetBool("choose",false);
     }
     
 }
