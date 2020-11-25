@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Effects1
   m_EditorClassIdentifier: 
   power_name: Be Patient
-  power_number: 3
-  card_image: {fileID: 21300000, guid: c31e40961b2d9406dbd17c1aaa1d2ed9, type: 3}
-  cardPower: 
+  power_number: 1
+  card_image: {fileID: 21300000, guid: 4b7c49ce1f6454afba53eadf8f236f67, type: 3}
+  cardPower: Effects
   Cost: 1
   Determination: 0
+  onassetiveness: 0
+  onempathy: 1
   impacton: 2

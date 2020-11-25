@@ -9,7 +9,6 @@ public class CardManager : MonoBehaviour
     public enum CardState {InDeck, InHand, InBin , Inchoosen};
     public CardState cardState;
     private Ray ray;
-  
     void Start()
     {
         gameObject.SetActive(true);
@@ -17,11 +16,10 @@ public class CardManager : MonoBehaviour
 
     void Update()
     {
-
         switch (cardState)
         {
             case CardState.InBin:
-                gameObject.SetActive(false);
+                gameObject.SetActive(true);
                 transform.parent = null;
                 break;
 

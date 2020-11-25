@@ -20,19 +20,107 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d08cb0c-ac84-4771-9084-c325954f50f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animation.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/ChoosePanel.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/ChoosePanel.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/ChoosePanel.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/ChoosePanel.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/HandPanel.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/HandPanel.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/HandPanel.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/HandPanel.controller.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Nerd_Bully_Angry_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Nerd_Bully_Angry_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Nerd_Bully_Angry_Portraitl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Nerd_Bully_Angry_Portraitl.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Nerd_Bully_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Nerd_Bully_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Nerd_Bully_Ignoring_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Nerd_Bully_Ignoring_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Nerd_Bully_Ignoring_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Nerd_Bully_Ignoring_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Nerd_Bully_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Nerd_Bully_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_ Character_01_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_ Character_01_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_-Character_01_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_-Character_01_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_-Character_Angryl_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_-Character_Angryl_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_-Character_Angryl_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_-Character_Angryl_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_-Character_Neutral_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_-Character_Neutral_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_-Character_Neutral_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_-Character_Neutral_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_Characte_2_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_Characte_2_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_Character_2_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_Character_2_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_Character_Ignoring_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_Character_Ignoring_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_Character_Ignoring_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Player_Character_Ignoring_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Really_Bully_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Really_Bully_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Really_Bully_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/Really_Bully_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The _Jock_ Bully_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The _Jock_ Bully_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The _Mean _Old _Teacher_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The _Mean _Old _Teacher_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Angry_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Angry_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Angry_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Angry_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Flexing-Muscles_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Flexing-Muscles_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Flexing-Muscles_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Flexing-Muscles_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Ignoring_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Ignoring_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Ignoring_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Ignoring_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Jock_-Bully_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Angry_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Angry_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Angry_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Angry_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Ignoring_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Ignoring_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Ignoring_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Ignoring_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Shouting_Full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Shouting_Full.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Shouting_Portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character/The-_Mean-_Old-_Teacher_Shouting_Portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 85.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 85.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/GameObject.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/GameObject.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/New Scene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/New Scene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Enemy.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Enemy/New_card 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Enemy/New_card 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Enemy/New_card 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Enemy/New_card 2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Enemy/New_card 3.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Enemy/New_card 3.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Enemy/New_card.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Enemy/New_card.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/ChoosePanel.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/ChoosePanel.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card_prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card_prefab.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/InitialScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InitialScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Attack6.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Attack6.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Effects1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Effects1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Effects2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Effects2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Effects3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Effects3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Card.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardDisply.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardDisply.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drag.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drop.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +137,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CardInstantiate.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Score.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScoreManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CardDisply.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Drop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CardRotation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CardManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Card.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Drop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Drag.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Card.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CardDisply.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CardController.cs" />
       </list>
     </option>
@@ -78,7 +168,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.build.unityPlugin" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
@@ -121,6 +211,11 @@
       <workItem from="1605931190120" duration="6380000" />
       <workItem from="1605955344605" duration="946000" />
       <workItem from="1606104329551" duration="2885000" />
+      <workItem from="1606121111120" duration="7257000" />
+      <workItem from="1606148392135" duration="1936000" />
+      <workItem from="1606150391043" duration="4326000" />
+      <workItem from="1606155368390" duration="1990000" />
+      <workItem from="1606191448664" duration="7995000" />
     </task>
     <servers />
   </component>
@@ -150,14 +245,18 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="471" y="178" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1605516502091" />
-    <state x="229" y="52" key="SettingsEditor" timestamp="1605525787547">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="229" y="52" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1605525787547" />
-    <state x="229" y="73" key="SettingsEditor/0.25.1440.825@0.25.1440.825" timestamp="1605515254495" />
-    <state x="383" y="171" width="672" height="678" key="search.everywhere.popup" timestamp="1605515022271">
+    <state x="229" y="73" key="SettingsEditor" timestamp="1606156308048">
       <screen x="0" y="25" width="1440" height="825" />
     </state>
-    <state x="383" y="171" width="672" height="678" key="search.everywhere.popup/0.25.1440.825@0.25.1440.825" timestamp="1605515022271" />
+    <state x="229" y="52" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1605525787547" />
+    <state x="229" y="73" key="SettingsEditor/0.25.1440.825@0.25.1440.825" timestamp="1606156308048" />
+    <state x="384" y="196" key="run.anything.popup" timestamp="1606155840551">
+      <screen x="0" y="25" width="1440" height="825" />
+    </state>
+    <state x="384" y="196" key="run.anything.popup/0.25.1440.825@0.25.1440.825" timestamp="1606155840551" />
+    <state x="383" y="171" width="672" height="678" key="search.everywhere.popup" timestamp="1606156527688">
+      <screen x="0" y="25" width="1440" height="825" />
+    </state>
+    <state x="383" y="171" width="672" height="678" key="search.everywhere.popup/0.25.1440.825@0.25.1440.825" timestamp="1606156527688" />
   </component>
 </project>

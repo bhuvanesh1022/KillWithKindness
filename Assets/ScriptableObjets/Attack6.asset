@@ -15,7 +15,9 @@ MonoBehaviour:
   power_name: Listen
   power_number: 2
   card_image: {fileID: 21300000, guid: a7179ccd4212847bba53bd746621e091, type: 3}
-  cardPower: 
+  cardPower: Attack
   Cost: 2
   Determination: 0
+  onassetiveness: 0
+  onempathy: 0
   impacton: 1

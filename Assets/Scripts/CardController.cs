@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 public class CardController : MonoBehaviour
 {
     public int noOfCards;
-
+    public int noOfCardsNeedToBeDrawn = 5;
     [SerializeField] Button shuffleBtn;
     public Button discardBtn;
     public  List<Card> cardsScriptableObjects = new  List<Card>();
@@ -43,22 +43,20 @@ public class CardController : MonoBehaviour
     public TextMeshProUGUI maxValueEnthusiasm;
     public TextMeshProUGUI currentEnthusiasm;
     public TextMeshProUGUI currentResistance;
-
+    public TextMeshProUGUI currentEmpathy;
+    public TextMeshProUGUI currentAssertiveness;
     public Slider Assertivness;
     public Slider Empathy;
+    
 
-    public Animator HandPanelAnim;
-
-    public Animator ChoosePanelAnim;
-    // Start is called before the first frame update
     void Start()
     {
-        Assertivness.value = 2f;
-        Empathy.value = 3f;
-        EnemySlider.value = 10f;
+        Assertivness.value = 1f;
+        Empathy.value = 1f;
+        EnemySlider.value = 20f;
         PlayerSlider.value = 10f;
         shuffleBtn.onClick.RemoveAllListeners();
-        shuffleBtn.onClick.AddListener(OnShuffle);
+        shuffleBtn.onClick.AddListener(Draw);
         panel.SetActive(false);
         attackPoint.gameObject.SetActive(false);
         healPoint.gameObject.SetActive(false);
@@ -68,14 +66,14 @@ public class CardController : MonoBehaviour
             GameObject card = Instantiate(cardSample,t, false);
             card.GetComponent<CardManager>().cardState = CardManager.CardState.InDeck;
             card.GetComponent<CardDisply>().card = cardsScriptableObjects[i];
-            cardHolder.Add(card);
             cardsInDeck.Add(card);
         }
     }
     
-
     private void Update()
     {
+        currentEmpathy.text = Empathy.value.ToString();
+        currentAssertiveness.text = Assertivness.value.ToString();
         cardsInDeckCount.text = cardsInDeck.Count.ToString();
         Debug.Log(cardsInDeckCount.text + "Total cards in Deck");
         maxValueEnthusiasm.text = PlayerSlider.maxValue.ToString();
@@ -112,69 +110,76 @@ public class CardController : MonoBehaviour
        Application.Quit();
        
     }
-    void OnShuffle()
+    
+    public void Draw()
     {
-        if (cardsInDeck.Count < 3)
+        if (cardsInDeck.Count >= noOfCardsNeedToBeDrawn)
         {
-            cardsInDeck.AddRange(cardsInBin);
+            for (int i = 0; i < noOfCardsNeedToBeDrawn; i++)
+            {
+                int r = Random.Range(0, cardsInDeck.Count);
+                cardsInHand.Add(cardsInDeck[r]);
+                cardsInHand[i].SetActive(true);
+                cardsInHand[i].GetComponent<CardManager>().cardState = CardManager.CardState.InHand;
+                cardsInHand[i].transform.SetParent(HandPanel.transform, false);
+                cardsInHand[i].GetComponent<CanvasGroup>().alpha = 1f;
+                cardsInHand[i].GetComponent<CanvasGroup>().blocksRaycasts = true;
+                cardsInDeck.Remove(cardsInDeck[r]);
+            }
+        }
+        else if (cardsInDeck.Count < noOfCardsNeedToBeDrawn)
+        {
             for (int i = 0; i < cardsInDeck.Count; i++)
             {
-                cardsInDeck[i].gameObject.SetActive(true);
-                cardsInDeck[i].GetComponent<CardManager>().cardState = CardManager.CardState.InDeck;
+                cardsInHand.Add(cardsInDeck[i]);
+                cardsInHand[i].SetActive(true);
+                cardsInHand[i].GetComponent<CardManager>().cardState = CardManager.CardState.InHand;
+                cardsInHand[i].transform.SetParent(HandPanel.transform, false) ;
+                cardsInHand[i].GetComponent<CanvasGroup>().alpha = 1f;
+                cardsInHand[i].GetComponent<CanvasGroup>().blocksRaycasts = true;
             }
-            cardsInBin.Clear();
-        }
-
-        if (cardsInHand.Count == 0)
-        {
-            List<int> r = new List<int>();
-
-            if (cardsInDeck.Count > 5)
+            cardsInDeck.Clear();
+            
+            if (cardsInHand.Count < noOfCardsNeedToBeDrawn)
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < cardsInBin.Count; i++)
                 {
-                    r.Add(Random.Range(0, cardsInDeck.Count));
-                    Debug.Log(r[i]);
+                    cardsInDeck.Add(cardsInBin[i]);
+                    cardsInDeck[i].GetComponent<CardManager>().cardState = CardManager.CardState.InDeck;
+                    cardsInDeck[i].SetActive(true);
                 }
+                cardsInBin.Clear();
                 
-                for (int j = 0; j < r.Count; j++)
+                int inHandCards = cardsInHand.Count;
+                
+                for (int i = 0; i <noOfCardsNeedToBeDrawn - inHandCards; i++)
                 {
-                    cardsInHand.Add(cardsInDeck[j]);
-                    for (int k = 0; k < cardsInHand.Count; k++)
+                    int h = Random.Range(0, cardsInDeck.Count);
+                    cardsInDeck[h].SetActive(true);
+                    cardsInHand.Add(cardsInDeck[h]);
+                    for (int j = 0; j < cardsInHand.Count; j++)
                     {
-                        cardsInHand[k].GetComponent<CardManager>().cardState = CardManager.CardState.InHand;
-                        cardsInHand[k].transform.SetParent(HandPanel.transform, false) ;
-                        cardsInHand[k].GetComponent<CanvasGroup>().alpha = 1f;
-                        cardsInHand[k].GetComponent<CanvasGroup>().blocksRaycasts = true;
+                        cardsInHand[j].GetComponent<CardManager>().cardState = CardManager.CardState.InHand;
+                        cardsInHand[j].transform.SetParent(HandPanel.transform, false) ;
+                        cardsInHand[j].GetComponent<CanvasGroup>().alpha = 1f;
+                        cardsInHand[j].GetComponent<CanvasGroup>().blocksRaycasts = true;
                     }
-                    cardsInDeck.RemoveAt(j);
+                    cardsInDeck.Remove(cardsInDeck[h]);
                 }
-            }
-            else
-            {
-                cardsInHand.AddRange(cardsInDeck);
-                for (int k = 0; k < cardsInHand.Count; k++)
-                {
-                    cardsInHand[k].GetComponent<CardManager>().cardState = CardManager.CardState.InHand;
-                    cardsInHand[k].transform.SetParent(HandPanel.transform, false);
-                }
-                cardsInDeck.Clear();
             }
         }
     }
-
+    
     public void OnDiscard()
     {
         discardBtn.gameObject.SetActive(false);
-        HandPanelAnim.SetBool("choose",true);
         StartCoroutine(CardChoose());
     }
 
     IEnumerator CardChoose()
     {
         Debug.Log("Clicked");
-        ChoosePanelAnim.SetBool("choose",true);
-        yield return new WaitForSeconds(1f);
+        
         for (int i = 0; i < drop.card_choose.Count; i++)
         {
             panel.SetActive(true);
@@ -185,6 +190,9 @@ public class CardController : MonoBehaviour
             card.GetComponent<Image>().sprite = drop.card_choose[i].GetComponent<Image>().sprite;
             card.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = name;
             card.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = power.ToString();
+            card.transform.GetChild(3).gameObject.GetComponent<TextMeshProUGUI>().text =
+                drop.card_choose[i].GetComponent<CardDisply>().card.cardPower;
+            string multiply = card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text;
             drop.card_choose[i].GetComponent<CanvasGroup>().alpha = 0f;
             
             if (drop.card_choose[i].GetComponent<CardDisply>().card.cardPower == "Attack")
@@ -192,14 +200,12 @@ public class CardController : MonoBehaviour
                 if (drop.card_choose[i].GetComponent<CardDisply>().card.impacton == Card.ImpactOn.Assetiveness)
                 {
                     power = power * (int)Assertivness.value;
+                    card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power+ " X Assetiveness";
                 }
                 if (drop.card_choose[i].GetComponent<CardDisply>().card.impacton == Card.ImpactOn.Empathy)
                 {
                     power = power * (int)Empathy.value;
-                }
-                if (drop.card_choose[i].GetComponent<CardDisply>().card.impacton == Card.ImpactOn.none)
-                {
-                    power = power;
+                    card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power+ " X Empathy";
                 }
                 EnemySlider.value -= power;
                 Debug.Log("HIT"+EnemySlider.value);
@@ -213,20 +219,40 @@ public class CardController : MonoBehaviour
                 if (drop.card_choose[i].GetComponent<CardDisply>().card.impacton == Card.ImpactOn.Assetiveness)
                 {
                     power = power * (int)Assertivness.value;
+                    card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text =
+                        power + "X Assetiveness";
                 }
                 if (drop.card_choose[i].GetComponent<CardDisply>().card.impacton == Card.ImpactOn.Empathy)
                 {
                     power = power * (int)Empathy.value;
+                    card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power+ "X Empathy";
                 }
-                if (drop.card_choose[i].GetComponent<CardDisply>().card.impacton == Card.ImpactOn.none)
-                {
-                    power = power;
-                }
+                
                 PlayerSlider.value += power;
                 healPoint.gameObject.SetActive(true);
                 healPoint.color = new Color32(54,198,32,255);
                 healPoint.text = "+"+power.ToString();
                 yield return new WaitForSeconds(0.3f);
+            }
+            else if (drop.card_choose[i].GetComponent<CardDisply>().card.cardPower == "Effects")
+            {
+                power = power;
+                if (drop.card_choose[i].card.onassetiveness == true && drop.card_choose[i].card.onempathy == false)
+                {
+                    card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power+ "+ Assertiveness";
+                    Assertivness.value = Assertivness.value+1;
+                }
+                else if (drop.card_choose[i].card.onempathy == true && drop.card_choose[i].card.onassetiveness == false)
+                {
+                    card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power+ "+ Empathy";
+                    Empathy.value = Empathy.value+1;
+                }
+                else if (drop.card_choose[i].card.onassetiveness && drop.card_choose[i].card.onempathy)
+                {
+                    card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power+ "+ Assertiveness" + power+ "+ Empathy";
+                    Assertivness.value = Assertivness.value+1;
+                    Empathy.value = Empathy.value+1;
+                }
             }
             
             yield return new WaitForSeconds(1f);
@@ -236,9 +262,8 @@ public class CardController : MonoBehaviour
         
         for (int i = 0; i < cardsInBin.Count; i++)
         {
-            //cardsInBinCount.text = cardsInBin.Count.ToString();
             cardsInBin[i].GetComponent<CardManager>().cardState = CardManager.CardState.InBin;
-            cardsInBin[i].GetComponent<CardManager>().gameObject.SetActive(false);
+            cardsInBin[i].transform.position = t.localPosition;
             cardsInBin[i].GetComponent<Drag>().return_to_parent = null;
             cardsInBin[i].GetComponent<Transform>().SetParent(null);
         }
@@ -265,6 +290,7 @@ public class CardController : MonoBehaviour
             string name = enemyScriptableObjects[random].power_name;
             int number =enemyScriptableObjects[random].power_number ;
             Debug.Log(name+"  number"+number);
+            card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = number+" "+name;
             card.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text=name;
             card.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text=number.ToString();
             card.GetComponent<Image>().sprite = enemyScriptableObjects[random].card_image;
@@ -274,7 +300,8 @@ public class CardController : MonoBehaviour
                 PlayerSlider.value -= number;
                 Debug.Log("HIT"+EnemySlider.value);
                 healPoint.gameObject.SetActive(true);
-                healPoint.color = new Color(124,252,0,255);
+                //healPoint.color = new Color(124,252,0,255);
+                healPoint.color = new Color(255,0,0,255);
                 healPoint.text = "-"+ number.ToString();
                 yield return new WaitForSeconds(0.3f);
             }
@@ -293,9 +320,7 @@ public class CardController : MonoBehaviour
         panel.SetActive(false);
         enemy_attack.SetActive(false);
         shuffleBtn.interactable = true;
-        ChoosePanelAnim.SetBool("choose",false);
         yield return new WaitForSeconds(0.6f);
-        HandPanelAnim.SetBool("choose",false);
     }
     
 }

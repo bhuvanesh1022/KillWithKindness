@@ -13,6 +13,8 @@ public class Card : ScriptableObject
     public string cardPower;
     public int Cost;
     public int Determination;
+    public bool onassetiveness;
+    public bool onempathy;
     public enum ImpactOn { Assetiveness, Empathy, none };
 
     public ImpactOn impacton;

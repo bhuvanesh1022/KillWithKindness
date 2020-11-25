@@ -22,7 +22,6 @@ public class Drop : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointerExit
             GetComponent<Image>().raycastTarget = true;
             choose.gameObject.SetActive(false);
         }
-        
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -35,12 +34,13 @@ public class Drop : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointerExit
         {
             d.return_to_parent = this.transform;
             card_choose.Add(eventData.pointerDrag.gameObject.GetComponent<CardDisply>());
+            eventData.pointerDrag.GetComponent<CanvasGroup>().blocksRaycasts = false;
         }
+        
         if(d.return_to_parent.name == "HandPanel")
         {
             GetComponent<Image>().raycastTarget = true;
         }
-        
     }
 
     public void OnPointerEnter(PointerEventData eventData)

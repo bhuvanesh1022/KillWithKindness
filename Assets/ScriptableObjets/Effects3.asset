@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51832457918c446eb81d9cc607d2533, type: 3}
   m_Name: Effects3
   m_EditorClassIdentifier: 
-  power_name: Heal
-  power_number: 3
-  card_image: {fileID: 21300000, guid: c31e40961b2d9406dbd17c1aaa1d2ed9, type: 3}
-  cardPower: 
+  power_name: Breathe Deeply
+  power_number: 1
+  card_image: {fileID: 21300000, guid: 4b7c49ce1f6454afba53eadf8f236f67, type: 3}
+  cardPower: Effects
   Cost: 3
   Determination: 0
+  onassetiveness: 1
+  onempathy: 1
   impacton: 2
