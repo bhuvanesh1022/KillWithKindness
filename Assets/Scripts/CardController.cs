@@ -47,7 +47,8 @@ public class CardController : MonoBehaviour
     public TextMeshProUGUI currentAssertiveness;
     public Slider Assertivness;
     public Slider Empathy;
-    
+    public List<Sprite> Enemy_image = new List<Sprite>();
+    public Image Enemy;
 
     void Start()
     {
@@ -68,6 +69,9 @@ public class CardController : MonoBehaviour
             card.GetComponent<CardDisply>().card = cardsScriptableObjects[i];
             cardsInDeck.Add(card);
         }
+
+        int enemy_number = Random.Range(0, Enemy_image.Count);
+        Enemy.sprite = Enemy_image[enemy_number];
     }
     
     private void Update()

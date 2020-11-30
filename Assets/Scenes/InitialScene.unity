@@ -554,6 +554,12 @@ MonoBehaviour:
   currentAssertiveness: {fileID: 1440721183}
   Assertivness: {fileID: 1135073487}
   Empathy: {fileID: 1633369157}
+  Enemy_image:
+  - {fileID: 21300000, guid: f648ca654fa0e4be1b699cbff0793a93, type: 3}
+  - {fileID: 21300000, guid: c4e75ef265e464ba99aae01b4a480b04, type: 3}
+  - {fileID: 21300000, guid: ecec52d1fb6b7426fb269ee97d9ccb06, type: 3}
+  - {fileID: 21300000, guid: 0afd506ee33e64e33ad5eceb88d531d3, type: 3}
+  Enemy: {fileID: 2034983789}
 --- !u!4 &253193446
 Transform:
   m_ObjectHideFlags: 0
@@ -5670,7 +5676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1831372694
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6692,14 +6698,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 24f63f0eb38ab4edcaeaea76256eae77, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
