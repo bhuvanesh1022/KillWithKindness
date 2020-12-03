@@ -15,6 +15,7 @@ public class Card : ScriptableObject
     public int Determination;
     public bool onassetiveness;
     public bool onempathy;
+    public string comment;
     public enum ImpactOn { Assetiveness, Empathy, none };
 
     public ImpactOn impacton;

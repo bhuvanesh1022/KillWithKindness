@@ -14,6 +14,10 @@ public class CardController : MonoBehaviour
     [SerializeField] Button shuffleBtn;
     public Button discardBtn;
     public  List<Card> cardsScriptableObjects = new  List<Card>();
+    public List<Card> NerdScriptableObjects = new List<Card>();
+    public List<Card> JockScriptableObjects = new List<Card>();
+    public List<Card> OldTeacherScriptableObjects = new List<Card>();
+    public List<Card> ReallyScriptableObjects = new List<Card>();
     public List<Card> enemyScriptableObjects = new List<Card>();
     public List<GameObject> cardsInDeck = new List<GameObject>();
     [SerializeField] List<GameObject> cardsInHand = new List<GameObject>();
@@ -49,7 +53,14 @@ public class CardController : MonoBehaviour
     public Slider Empathy;
     public List<Sprite> Enemy_image = new List<Sprite>();
     public Image Enemy;
+    public List<String> enemy_name = new List<String>();
+    public TextMeshProUGUI enemyName;
 
+    public Image enemy_comment_img;
+    public TextMeshProUGUI enemy_comment;
+    
+    public Image player_comment_img;
+    public TextMeshProUGUI player_comment;
     void Start()
     {
         Assertivness.value = 1f;
@@ -72,6 +83,9 @@ public class CardController : MonoBehaviour
 
         int enemy_number = Random.Range(0, Enemy_image.Count);
         Enemy.sprite = Enemy_image[enemy_number];
+        enemyName.text = enemy_name[enemy_number];
+        enemy_comment_img.gameObject.SetActive(false);
+        player_comment_img.gameObject.SetActive(false);
     }
     
     private void Update()
@@ -111,8 +125,13 @@ public class CardController : MonoBehaviour
     }
     public void Restart()
     {
-       Application.Quit();
-       
+        SceneManager.LoadScene("InitialScene");
+
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
     
     public void Draw()
@@ -197,6 +216,8 @@ public class CardController : MonoBehaviour
             card.transform.GetChild(3).gameObject.GetComponent<TextMeshProUGUI>().text =
                 drop.card_choose[i].GetComponent<CardDisply>().card.cardPower;
             string multiply = card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text;
+            player_comment_img.gameObject.SetActive(true);
+            player_comment.text = drop.card_choose[i].GetComponent<CardDisply>().card.comment;
             drop.card_choose[i].GetComponent<CanvasGroup>().alpha = 0f;
             
             if (drop.card_choose[i].GetComponent<CardDisply>().card.cardPower == "Attack")
@@ -214,9 +235,11 @@ public class CardController : MonoBehaviour
                 EnemySlider.value -= power;
                 Debug.Log("HIT"+EnemySlider.value);
                 attackPoint.gameObject.SetActive(true);
+                
                 attackPoint.color = new Color(255,0,0,255);
                 attackPoint.text = "-" + power.ToString();
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.6f);
+
             }
             else if (drop.card_choose[i].GetComponent<CardDisply>().card.cardPower == "Defence")
             {
@@ -236,7 +259,7 @@ public class CardController : MonoBehaviour
                 healPoint.gameObject.SetActive(true);
                 healPoint.color = new Color32(54,198,32,255);
                 healPoint.text = "+"+power.ToString();
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.6f);
             }
             else if (drop.card_choose[i].GetComponent<CardDisply>().card.cardPower == "Effects")
             {
@@ -245,21 +268,29 @@ public class CardController : MonoBehaviour
                 {
                     card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power+ "+ Assertiveness";
                     Assertivness.value = Assertivness.value+1;
+                    yield return new WaitForSeconds(0.6f);
                 }
                 else if (drop.card_choose[i].card.onempathy == true && drop.card_choose[i].card.onassetiveness == false)
                 {
                     card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power+ "+ Empathy";
                     Empathy.value = Empathy.value+1;
+                    yield return new WaitForSeconds(0.6f);
                 }
                 else if (drop.card_choose[i].card.onassetiveness && drop.card_choose[i].card.onempathy)
                 {
                     card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power+ "+ Assertiveness" + power+ "+ Empathy";
                     Assertivness.value = Assertivness.value+1;
                     Empathy.value = Empathy.value+1;
+                    yield return new WaitForSeconds(0.6f);
                 }
             }
-            
-            yield return new WaitForSeconds(1f);
+
+            healPoint.text = " ";
+            attackPoint.text = " ";
+            yield return new WaitForSeconds(2.5f);
+            panel.gameObject.SetActive(false);
+            player_comment_img.gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.6f);
         }
         
         cardsInBin.AddRange(cardsInHand);
@@ -278,6 +309,7 @@ public class CardController : MonoBehaviour
         attackPoint.gameObject.SetActive(false);
         healPoint.gameObject.SetActive(false);
         shuffleBtn.interactable = false;
+        player_comment_img.gameObject.SetActive(false);
         StartCoroutine(Enemy_Card());
     }
 
@@ -285,6 +317,35 @@ public class CardController : MonoBehaviour
     {
         enemy_attack.SetActive(true);
         yield return new WaitForSeconds(2f);
+
+        if (enemyName.text == "Nerd Bully")
+        {
+            for (int i = 0; i < NerdScriptableObjects.Count; i++)
+            {
+                enemyScriptableObjects.Add(NerdScriptableObjects[i]);
+            }
+        }
+        if (enemyName.text == "Jock Bully")
+        {
+            for (int i = 0; i < JockScriptableObjects.Count; i++)
+            {
+                enemyScriptableObjects.Add(JockScriptableObjects[i]);
+            }
+        }
+        if (enemyName.text == "Mean Teacher")
+        {
+            for (int i = 0; i < OldTeacherScriptableObjects.Count; i++)
+            {
+                enemyScriptableObjects.Add(OldTeacherScriptableObjects[i]);
+            }
+        }
+        if (enemyName.text == "Really Bully")
+        {
+            for (int i = 0; i < ReallyScriptableObjects.Count; i++)
+            {
+                enemyScriptableObjects.Add(ReallyScriptableObjects[i]);
+            }
+        }
         
         for (int i = 0; i < 1; i++)
         {
@@ -294,7 +355,7 @@ public class CardController : MonoBehaviour
             string name = enemyScriptableObjects[random].power_name;
             int number =enemyScriptableObjects[random].power_number ;
             Debug.Log(name+"  number"+number);
-            card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = number+" "+name;
+            card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = " ";
             card.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text=name;
             card.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text=number.ToString();
             card.GetComponent<Image>().sprite = enemyScriptableObjects[random].card_image;
@@ -307,7 +368,9 @@ public class CardController : MonoBehaviour
                 //healPoint.color = new Color(124,252,0,255);
                 healPoint.color = new Color(255,0,0,255);
                 healPoint.text = "-"+ number.ToString();
-                yield return new WaitForSeconds(0.3f);
+                enemy_comment_img.gameObject.SetActive(true);
+                enemy_comment.text = enemyScriptableObjects[random].comment;
+                yield return new WaitForSeconds(0.6f);
             }
             else if (power.ToString() == "Defence")
             {
@@ -315,7 +378,9 @@ public class CardController : MonoBehaviour
                 attackPoint.gameObject.SetActive(true);
                 attackPoint.color = new Color32(54,198,32,255);
                 attackPoint.text = "+"+number.ToString();
-                yield return new WaitForSeconds(0.3f);
+                enemy_comment_img.gameObject.SetActive(true);
+                enemy_comment.text = enemyScriptableObjects[random].comment;
+                yield return new WaitForSeconds(0.6f);
             }
             healPoint.gameObject.SetActive(false);
             attackPoint.gameObject.SetActive(false);
@@ -324,6 +389,8 @@ public class CardController : MonoBehaviour
         panel.SetActive(false);
         enemy_attack.SetActive(false);
         shuffleBtn.interactable = true;
+        enemy_comment_img.gameObject.SetActive(false);
+        enemyScriptableObjects.Clear();
         yield return new WaitForSeconds(0.6f);
     }
     

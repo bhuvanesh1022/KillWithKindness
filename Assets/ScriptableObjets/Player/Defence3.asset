@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51832457918c446eb81d9cc607d2533, type: 3}
+  m_Name: Defence3
+  m_EditorClassIdentifier: 
+  power_name: Think
+  power_number: 1
+  card_image: {fileID: 21300000, guid: c31e40961b2d9406dbd17c1aaa1d2ed9, type: 3}
+  cardPower: Defence
+  Cost: 0
+  Determination: 1
+  onassetiveness: 0
+  onempathy: 0
+  comment: Hmm.
+  impacton: 1
