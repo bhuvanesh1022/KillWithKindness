@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c31e40961b2d9406dbd17c1aaa1d2ed9
+guid: 58d49e4bc7a2b4bf8b0576230f62b163
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -23,7 +23,6 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
-  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -33,7 +32,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -58,7 +57,6 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3

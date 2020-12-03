@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power_name: Be Patient
   power_number: 1
-  card_image: {fileID: 21300000, guid: 4b7c49ce1f6454afba53eadf8f236f67, type: 3}
+  card_image: {fileID: 21300000, guid: 58d49e4bc7a2b4bf8b0576230f62b163, type: 3}
   cardPower: Effects
   Cost: 1
   Determination: 0

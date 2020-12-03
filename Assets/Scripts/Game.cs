@@ -13,7 +13,6 @@ public class Game : MonoBehaviour
     public int numberofcardsNeeded = 12;
     public int noOfCardsNeedToBeDrawn = 5;
     public GameObject inst;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +22,7 @@ public class Game : MonoBehaviour
             cardsInDeck.Add(gameObject);
         }
     }
-
+    
     public void Draw()
     {
         if (cardsInDeck.Count >= noOfCardsNeedToBeDrawn)
@@ -73,5 +72,14 @@ public class Game : MonoBehaviour
         }
         cardsInHand.Clear();
         Draw();
+    }
+
+    public void Discardcard()
+    {
+        for (int i = 0; i < 1; i++)
+        {
+            cardsInBin.Add(cardsInHand[i]);
+            cardsInHand.Remove(cardsInHand[0]);
+        }
     }
 }

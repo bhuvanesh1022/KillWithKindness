@@ -11,7 +11,7 @@ public class CardController : MonoBehaviour
 {
     public int noOfCards;
     public int noOfCardsNeedToBeDrawn = 5;
-    [SerializeField] Button shuffleBtn;
+    //[SerializeField] Button shuffleBtn;
     public Button discardBtn;
     public  List<Card> cardsScriptableObjects = new  List<Card>();
     public List<Card> NerdScriptableObjects = new List<Card>();
@@ -67,8 +67,6 @@ public class CardController : MonoBehaviour
         Empathy.value = 1f;
         EnemySlider.value = 20f;
         PlayerSlider.value = 10f;
-        shuffleBtn.onClick.RemoveAllListeners();
-        shuffleBtn.onClick.AddListener(Draw);
         panel.SetActive(false);
         attackPoint.gameObject.SetActive(false);
         healPoint.gameObject.SetActive(false);
@@ -86,6 +84,7 @@ public class CardController : MonoBehaviour
         enemyName.text = enemy_name[enemy_number];
         enemy_comment_img.gameObject.SetActive(false);
         player_comment_img.gameObject.SetActive(false);
+        DrawCards();
     }
     
     private void Update()
@@ -133,9 +132,14 @@ public class CardController : MonoBehaviour
     {
         Application.Quit();
     }
-    
-    public void Draw()
+
+    private void DrawCards()
     {
+        StartCoroutine(Draw());
+    }
+    IEnumerator  Draw()
+    {
+        
         if (cardsInDeck.Count >= noOfCardsNeedToBeDrawn)
         {
             for (int i = 0; i < noOfCardsNeedToBeDrawn; i++)
@@ -148,6 +152,7 @@ public class CardController : MonoBehaviour
                 cardsInHand[i].GetComponent<CanvasGroup>().alpha = 1f;
                 cardsInHand[i].GetComponent<CanvasGroup>().blocksRaycasts = true;
                 cardsInDeck.Remove(cardsInDeck[r]);
+                yield return new WaitForSeconds(0.3f);
             }
         }
         else if (cardsInDeck.Count < noOfCardsNeedToBeDrawn)
@@ -160,6 +165,7 @@ public class CardController : MonoBehaviour
                 cardsInHand[i].transform.SetParent(HandPanel.transform, false) ;
                 cardsInHand[i].GetComponent<CanvasGroup>().alpha = 1f;
                 cardsInHand[i].GetComponent<CanvasGroup>().blocksRaycasts = true;
+                yield return new WaitForSeconds(0.3f);
             }
             cardsInDeck.Clear();
             
@@ -186,23 +192,25 @@ public class CardController : MonoBehaviour
                         cardsInHand[j].transform.SetParent(HandPanel.transform, false) ;
                         cardsInHand[j].GetComponent<CanvasGroup>().alpha = 1f;
                         cardsInHand[j].GetComponent<CanvasGroup>().blocksRaycasts = true;
+                        yield return new WaitForSeconds(0.3f);
                     }
                     cardsInDeck.Remove(cardsInDeck[h]);
                 }
             }
         }
+
+        yield return null;
     }
     
     public void OnDiscard()
     {
-        discardBtn.gameObject.SetActive(false);
+        discardBtn.interactable = false;
         StartCoroutine(CardChoose());
     }
 
     IEnumerator CardChoose()
     {
         Debug.Log("Clicked");
-        
         for (int i = 0; i < drop.card_choose.Count; i++)
         {
             panel.SetActive(true);
@@ -304,11 +312,10 @@ public class CardController : MonoBehaviour
         }
         cardsInHand.Clear();
         drop.card_choose.Clear();
-        discardBtn.interactable = true;
         panel.SetActive(false);
+        discardBtn.interactable = true;
         attackPoint.gameObject.SetActive(false);
         healPoint.gameObject.SetActive(false);
-        shuffleBtn.interactable = false;
         player_comment_img.gameObject.SetActive(false);
         StartCoroutine(Enemy_Card());
     }
@@ -388,10 +395,10 @@ public class CardController : MonoBehaviour
         }
         panel.SetActive(false);
         enemy_attack.SetActive(false);
-        shuffleBtn.interactable = true;
         enemy_comment_img.gameObject.SetActive(false);
         enemyScriptableObjects.Clear();
         yield return new WaitForSeconds(0.6f);
+        DrawCards();
     }
     
 }
