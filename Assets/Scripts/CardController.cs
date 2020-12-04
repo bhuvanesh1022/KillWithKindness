@@ -139,7 +139,6 @@ public class CardController : MonoBehaviour
     }
     IEnumerator  Draw()
     {
-        
         if (cardsInDeck.Count >= noOfCardsNeedToBeDrawn)
         {
             for (int i = 0; i < noOfCardsNeedToBeDrawn; i++)
@@ -152,7 +151,7 @@ public class CardController : MonoBehaviour
                 cardsInHand[i].GetComponent<CanvasGroup>().alpha = 1f;
                 cardsInHand[i].GetComponent<CanvasGroup>().blocksRaycasts = true;
                 cardsInDeck.Remove(cardsInDeck[r]);
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.1f);
             }
         }
         else if (cardsInDeck.Count < noOfCardsNeedToBeDrawn)
@@ -165,7 +164,7 @@ public class CardController : MonoBehaviour
                 cardsInHand[i].transform.SetParent(HandPanel.transform, false) ;
                 cardsInHand[i].GetComponent<CanvasGroup>().alpha = 1f;
                 cardsInHand[i].GetComponent<CanvasGroup>().blocksRaycasts = true;
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.1f);
             }
             cardsInDeck.Clear();
             
@@ -192,7 +191,7 @@ public class CardController : MonoBehaviour
                         cardsInHand[j].transform.SetParent(HandPanel.transform, false) ;
                         cardsInHand[j].GetComponent<CanvasGroup>().alpha = 1f;
                         cardsInHand[j].GetComponent<CanvasGroup>().blocksRaycasts = true;
-                        yield return new WaitForSeconds(0.3f);
+                        yield return new WaitForSeconds(0.1f);
                     }
                     cardsInDeck.Remove(cardsInDeck[h]);
                 }
@@ -205,13 +204,14 @@ public class CardController : MonoBehaviour
     public void OnDiscard()
     {
         discardBtn.interactable = false;
+        discardBtn.gameObject.GetComponent<CanvasGroup>().alpha = 0f;
         StartCoroutine(CardChoose());
     }
 
     IEnumerator CardChoose()
     {
         Debug.Log("Clicked");
-        for (int i = 0; i < drop.card_choose.Count; i++)
+        for (int i = 0; i < 3; i++)//i=0
         {
             panel.SetActive(true);
   
@@ -249,7 +249,7 @@ public class CardController : MonoBehaviour
                 yield return new WaitForSeconds(0.6f);
 
             }
-            else if (drop.card_choose[i].GetComponent<CardDisply>().card.cardPower == "Defence")
+            else if (drop.card_choose[i].GetComponent<CardDisply>().card.cardPower == "Heal")
             {
                 if (drop.card_choose[i].GetComponent<CardDisply>().card.impacton == Card.ImpactOn.Assetiveness)
                 {
@@ -313,6 +313,7 @@ public class CardController : MonoBehaviour
         cardsInHand.Clear();
         drop.card_choose.Clear();
         panel.SetActive(false);
+        discardBtn.gameObject.GetComponent<CanvasGroup>().alpha = 1f;
         discardBtn.interactable = true;
         attackPoint.gameObject.SetActive(false);
         healPoint.gameObject.SetActive(false);
@@ -379,7 +380,7 @@ public class CardController : MonoBehaviour
                 enemy_comment.text = enemyScriptableObjects[random].comment;
                 yield return new WaitForSeconds(0.6f);
             }
-            else if (power.ToString() == "Defence")
+            else if (power.ToString() == "Heal")
             {
                 EnemySlider.value += number;
                 attackPoint.gameObject.SetActive(true);

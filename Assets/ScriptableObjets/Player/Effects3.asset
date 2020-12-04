@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power_name: Breathe Deeply
   power_number: 1
-  card_image: {fileID: 21300000, guid: 58d49e4bc7a2b4bf8b0576230f62b163, type: 3}
+  card_image: {fileID: 21300000, guid: e91c0924746154182b09420fb58951bf, type: 3}
   cardPower: Effects
   Cost: 3
   Determination: 0

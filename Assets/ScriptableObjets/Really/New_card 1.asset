@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power_name: Mock Appearance
   power_number: 2
-  card_image: {fileID: 21300000, guid: 1d0b9ad5de93549a4a0d80da16959dd3, type: 3}
+  card_image: {fileID: 21300000, guid: 297ef9d1e4c1c412e967fadfa119a137, type: 3}
   cardPower: Attack
   Cost: 0
   Determination: 0

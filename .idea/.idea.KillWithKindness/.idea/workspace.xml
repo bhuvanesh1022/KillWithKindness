@@ -20,22 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d08cb0c-ac84-4771-9084-c325954f50f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 106.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 106.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 84.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 84.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Img/arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Img/arrow.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 106 (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 106 (1).png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 84 (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 84 (1).png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 85 (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 85 (1).png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/quit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/quit.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Img/Group 84.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Img/Group 84.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Img/Group 85.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Img/Group 85.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Img/Group 85.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Img/Group 85.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Img/Group 85.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Img/Group 85.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card_prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card_prefab.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/InitialScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InitialScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/New Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/New Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 2.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 3.asset" afterDir="false" />
@@ -69,7 +65,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 4.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,12 +85,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CardRotation.cs" />
         <option value="$PROJECT_DIR$/Assets/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CardManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Drop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Drag.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CardDisply.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Card.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CardController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Drop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CardController.cs" />
       </list>
     </option>
   </component>
@@ -169,7 +165,10 @@
       <workItem from="1606710259423" duration="4611000" />
       <workItem from="1606746218745" duration="2019000" />
       <workItem from="1606817278852" duration="297000" />
-      <workItem from="1606972814227" duration="3191000" />
+      <workItem from="1606972814227" duration="6012000" />
+      <workItem from="1606986737177" duration="5000" />
+      <workItem from="1606990937373" duration="1017000" />
+      <workItem from="1607057777597" duration="822000" />
     </task>
     <servers />
   </component>

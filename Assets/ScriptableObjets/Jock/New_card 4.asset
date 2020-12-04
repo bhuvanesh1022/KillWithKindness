@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power_name: Not Acknowledge
   power_number: 1
-  card_image: {fileID: 21300000, guid: 4b7c49ce1f6454afba53eadf8f236f67, type: 3}
-  cardPower: Defence
+  card_image: {fileID: 21300000, guid: 9c19acc4eff9146e3b640e5f2d68b2c6, type: 3}
+  cardPower: Heal
   Cost: 0
   Determination: 0
   onassetiveness: 0
