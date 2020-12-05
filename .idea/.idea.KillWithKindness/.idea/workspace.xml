@@ -20,52 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d08cb0c-ac84-4771-9084-c325954f50f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 106 (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 106 (1).png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 84 (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 84 (1).png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 85 (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 85 (1).png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Img/quit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Img/quit.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card_prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card_prefab.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/InitialScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InitialScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack5.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack6.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack6.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Defence1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Defence1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Defence2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Defence2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Defence3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Defence3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Effects1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Effects1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Effects2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Effects2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Effects3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Effects3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +127,8 @@
       <workItem from="1606986737177" duration="5000" />
       <workItem from="1606990937373" duration="1017000" />
       <workItem from="1607057777597" duration="822000" />
+      <workItem from="1607073066789" duration="4447000" />
+      <workItem from="1607142097937" duration="7328000" />
     </task>
     <servers />
   </component>
@@ -207,13 +167,18 @@
     </state>
     <state x="229" y="52" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1605525787547" />
     <state x="229" y="73" key="SettingsEditor/0.25.1440.825@0.25.1440.825" timestamp="1606156308048" />
+    <state x="0" y="28" width="1440" height="872" key="VCS.FileHistoryDialog" timestamp="1607079502696">
+      <screen x="0" y="25" width="1440" height="825" />
+    </state>
+    <state x="0" y="28" width="1440" height="872" key="VCS.FileHistoryDialog/0.25.1440.825@0.25.1440.825" timestamp="1607079502696" />
     <state x="384" y="196" key="run.anything.popup" timestamp="1606155840551">
       <screen x="0" y="25" width="1440" height="825" />
     </state>
     <state x="384" y="196" key="run.anything.popup/0.25.1440.825@0.25.1440.825" timestamp="1606155840551" />
-    <state x="383" y="171" width="672" height="678" key="search.everywhere.popup" timestamp="1606156527688">
-      <screen x="0" y="25" width="1440" height="825" />
+    <state x="383" y="159" width="672" height="740" key="search.everywhere.popup" timestamp="1607076241604">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="383" y="159" width="672" height="740" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1607076241604" />
     <state x="383" y="171" width="672" height="678" key="search.everywhere.popup/0.25.1440.825@0.25.1440.825" timestamp="1606156527688" />
   </component>
 </project>
