@@ -20,10 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d08cb0c-ac84-4771-9084-c325954f50f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mat/Particle System.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mat/Particle System.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mat/dissolve.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mat/dissolve.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card_prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card_prefab.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/InitialScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InitialScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drag.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +55,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CardRotation.cs" />
         <option value="$PROJECT_DIR$/Assets/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CardManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Drag.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CardDisply.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Card.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Drag.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Drop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CardController.cs" />
       </list>
@@ -128,7 +140,8 @@
       <workItem from="1606990937373" duration="1017000" />
       <workItem from="1607057777597" duration="822000" />
       <workItem from="1607073066789" duration="4447000" />
-      <workItem from="1607142097937" duration="7328000" />
+      <workItem from="1607142097937" duration="13238000" />
+      <workItem from="1607404630681" duration="3264000" />
     </task>
     <servers />
   </component>

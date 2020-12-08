@@ -11,7 +11,6 @@ public class Drop : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointerExit
 
     private void Update()
     {
-        
         if (this.transform.childCount == 3)
         {
             GetComponent<Image>().raycastTarget = false;
@@ -37,10 +36,6 @@ public class Drop : MonoBehaviour,IDropHandler,IPointerEnterHandler,IPointerExit
             eventData.pointerDrag.GetComponent<CanvasGroup>().blocksRaycasts = false;
         }
         
-        if(d.return_to_parent.name == "HandPanel")
-        {
-            GetComponent<Image>().raycastTarget = true;
-        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)

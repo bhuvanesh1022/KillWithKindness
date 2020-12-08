@@ -31,10 +31,10 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         
         this.transform.SetParent(return_to_parent);
 
-        if (return_to_parent.name == "ChoosePanel")
-        {
-            GetComponent<CanvasGroup>().blocksRaycasts = false;
-        }
+        // if (return_to_parent.name == "ChoosePanel")
+        // {
+        //     GetComponent<CanvasGroup>().blocksRaycasts = false;
+        // }
         
         GetComponent<CanvasGroup>().alpha = 1f;
         
@@ -50,6 +50,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         
     }
+    
     
     public void Update()
     {

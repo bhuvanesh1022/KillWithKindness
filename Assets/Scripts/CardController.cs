@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,9 +14,9 @@ public class CardController : MonoBehaviour
     public int noOfCards;
     public int noOfCardsNeedToBeDrawn = 5;
     //[SerializeField] Button shuffleBtn;
+    public Button enemyconfirmbtn;
+    public Button nextBtn;
     [FormerlySerializedAs("discardBtn")] public Button confirmBtn;
-    public Button NextBtn;
-    public Button EnemyNextBtn;
     public  List<Card> cardsScriptableObjects = new  List<Card>();
     public List<Card> NerdScriptableObjects = new List<Card>();
     public List<Card> JockScriptableObjects = new List<Card>();
@@ -113,8 +114,7 @@ public class CardController : MonoBehaviour
         {
             enemy_attack.SetActive(false);
             gameOverPanel.SetActive(true);
-            winnerText.text =
-                "Opponent Won the Game";
+            winnerText.text = "Opponent Won the Game";
             
             Time.timeScale = 0;
         }
@@ -176,7 +176,6 @@ public class CardController : MonoBehaviour
                 {
                     cardsInDeck.Add(cardsInBin[i]);
                     cardsInDeck[i].GetComponent<CardManager>().cardState = CardManager.CardState.InDeck;
-                    cardsInDeck[i].SetActive(true);
                 }
                 cardsInBin.Clear();
                 
@@ -193,7 +192,6 @@ public class CardController : MonoBehaviour
                         cardsInHand[j].transform.SetParent(HandPanel.transform, false) ;
                         cardsInHand[j].GetComponent<CanvasGroup>().alpha = 1f;
                         cardsInHand[j].GetComponent<CanvasGroup>().blocksRaycasts = true;
-                        yield return new WaitForSeconds(0.1f);
                     }
                     cardsInDeck.Remove(cardsInDeck[h]);
                 }
@@ -202,14 +200,13 @@ public class CardController : MonoBehaviour
 
         yield return null;
     }
-    private int currentIndex = 0;
+    public int currentIndex = 0;
     
     public void OnDiscard()  
     {
         Debug.Log("called");
         confirmBtn.interactable = false;
         confirmBtn.gameObject.GetComponent<CanvasGroup>().alpha = 0f;
-        NextBtn.interactable = false;
         StartCoroutine(I_OnCardChoose());
     }
     
@@ -249,7 +246,6 @@ public class CardController : MonoBehaviour
 
             attackPoint.color = new Color(255, 0, 0, 255);
             attackPoint.text = "-" + power.ToString();
-            yield return new WaitForSeconds(0.6f);
         }
         else if (drop.card_choose[currentIndex].GetComponent<CardDisply>().card.cardPower == "Heal")
         {
@@ -280,14 +276,12 @@ public class CardController : MonoBehaviour
             {
                 card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power + "+ Assertiveness";
                 Assertivness.value = Assertivness.value + 1;
-                yield return new WaitForSeconds(0.6f);
             }
             else if (drop.card_choose[currentIndex].card.onempathy == true &&
                      drop.card_choose[currentIndex].card.onassetiveness == false)
             {
                 card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power + "+ Empathy";
                 Empathy.value = Empathy.value + 1;
-                yield return new WaitForSeconds(0.6f);
             }
             else if (drop.card_choose[currentIndex].card.onassetiveness &&
                      drop.card_choose[currentIndex].card.onempathy)
@@ -296,48 +290,78 @@ public class CardController : MonoBehaviour
                     power + "+ Assertiveness" + power + "+ Empathy";
                 Assertivness.value = Assertivness.value + 1;
                 Empathy.value = Empathy.value + 1;
-                yield return new WaitForSeconds(0.6f);
             }
 
         }
-        if (currentIndex < drop.card_choose.Count-1)
+        if (currentIndex < drop.card_choose.Count -1)
         {
-            currentIndex++; 
-            //confirmBtn.interactable = true;
-            //confirmBtn.gameObject.GetComponent<CanvasGroup>().alpha = 1;
-            NextBtn.gameObject.SetActive(true);
-            NextBtn.interactable = true;
+            yield return new WaitForSeconds(0.2f);
+            confirmBtn.interactable = true;
+            confirmBtn.GetComponentInChildren<TextMeshProUGUI>().SetText("Next");
+            confirmBtn.gameObject.GetComponent<CanvasGroup>().alpha = 1;
+            currentIndex++;
         }
+
         else
         {
+            confirmBtn.interactable=false;
+            confirmBtn.GetComponent<CanvasGroup>().alpha = 0f;
+            yield return new WaitForSeconds(0.1f);
             currentIndex = 0;
-            yield return new WaitForSeconds(1f);
-            NextBtn.gameObject.SetActive(false);
-            confirmBtn.interactable = true;
-            cardsInBin.AddRange(cardsInHand);
-            for (int i = 0; i < cardsInBin.Count; i++)
-            {
-                cardsInBin[i].GetComponent<CardManager>().cardState = CardManager.CardState.InBin;
-                cardsInBin[i].transform.position = t.localPosition;
-                cardsInBin[i].GetComponent<Drag>().return_to_parent = null;
-                cardsInBin[i].GetComponent<Transform>().SetParent(null);
-            }
-            cardsInHand.Clear();
-            drop.card_choose.Clear();
-            panel.SetActive(false);
-            confirmBtn.gameObject.GetComponent<CanvasGroup>().alpha = 1f;
-            confirmBtn.interactable = true;
-            attackPoint.gameObject.SetActive(false);
-            healPoint.gameObject.SetActive(false);
-            player_comment_img.gameObject.SetActive(false);
-            StartCoroutine(Enemy_Card());
-        }        
+            nextBtn.gameObject.SetActive(true);
+        }
+        // else
+        // {
+        //     yield return new WaitForSeconds(1.5f);
+        //     currentIndex = 0;
+        //     confirmBtn.interactable = true;
+        //     confirmBtn.GetComponentInChildren<TextMeshProUGUI>().SetText("Confirm");
+        //     cardsInBin.AddRange(cardsInHand);
+        //     for (int i = 0; i < cardsInBin.Count; i++)
+        //     {
+        //         cardsInBin[i].GetComponent<CardManager>().cardState = CardManager.CardState.InBin;
+        //         cardsInBin[i].transform.position = t.localPosition;
+        //         cardsInBin[i].GetComponent<Drag>().return_to_parent = null;
+        //         cardsInBin[i].GetComponent<Transform>().SetParent(null);
+        //     }
+        //     cardsInHand.Clear();
+        //     drop.card_choose.Clear();
+        //     panel.SetActive(false);
+        //     confirmBtn.gameObject.GetComponent<CanvasGroup>().alpha = 1f;
+        //     confirmBtn.interactable = true;
+        //     attackPoint.gameObject.SetActive(false);
+        //     healPoint.gameObject.SetActive(false);
+        //     player_comment_img.gameObject.SetActive(false);
+        //     StartCoroutine(Enemy_Card());
+        // }        
     }
-    
+
+    public void PlayerClose()
+    {
+        nextBtn.gameObject.SetActive(false);
+        cardsInBin.AddRange(cardsInHand);
+        for (int i = 0; i < cardsInBin.Count; i++)
+        {
+            cardsInBin[i].GetComponent<CardManager>().cardState = CardManager.CardState.InBin;
+            cardsInBin[i].transform.position = t.localPosition;
+            cardsInBin[i].GetComponent<Drag>().return_to_parent = null;
+            cardsInBin[i].GetComponent<Transform>().SetParent(null);
+        }
+        cardsInHand.Clear();
+        drop.card_choose.Clear();
+        panel.SetActive(false);
+        confirmBtn.gameObject.GetComponent<CanvasGroup>().alpha = 1f;
+        confirmBtn.interactable = true;
+        attackPoint.gameObject.SetActive(false);
+        healPoint.gameObject.SetActive(false);
+        player_comment_img.gameObject.SetActive(false);
+        
+        StartCoroutine(Enemy_Card());
+    }
     IEnumerator Enemy_Card()
     {
         enemy_attack.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         if (enemyName.text == "Nerd Bully")
         {
@@ -367,6 +391,7 @@ public class CardController : MonoBehaviour
                 enemyScriptableObjects.Add(ReallyScriptableObjects[i]);
             }
         }
+        
         for (int i = 0; i < 1; i++)
         {
             int random = Random.Range(0, enemyScriptableObjects.Count);
@@ -383,14 +408,12 @@ public class CardController : MonoBehaviour
             if (power.ToString() == "Attack")
             {
                 PlayerSlider.value -= number;
-                Debug.Log("HIT"+EnemySlider.value);
                 healPoint.gameObject.SetActive(true);
-                //healPoint.color = new Color(124,252,0,255);
                 healPoint.color = new Color(255,0,0,255);
                 healPoint.text = "-"+ number.ToString();
                 enemy_comment_img.gameObject.SetActive(true);
                 enemy_comment.text = enemyScriptableObjects[random].comment;
-                yield return new WaitForSeconds(0.6f);
+                yield return new WaitForSeconds(1f);
             }
             else if (power.ToString() == "Heal")
             {
@@ -400,21 +423,20 @@ public class CardController : MonoBehaviour
                 attackPoint.text = "+"+number.ToString();
                 enemy_comment_img.gameObject.SetActive(true);
                 enemy_comment.text = enemyScriptableObjects[random].comment;
-                yield return new WaitForSeconds(0.6f);
+                yield return new WaitForSeconds(1f);
             }
             healPoint.gameObject.SetActive(false);
             attackPoint.gameObject.SetActive(false);
         }
-        EnemyNextBtn.gameObject.SetActive(true);
+        enemyconfirmbtn.gameObject.SetActive(true);
     }
 
-    public void EnemyTUrn()
+    public void EnemyFinsih()
     {
-        
+        enemyconfirmbtn.gameObject.SetActive(false);
         panel.SetActive(false);
         enemy_attack.SetActive(false);
         enemy_comment_img.gameObject.SetActive(false);
-        EnemyNextBtn.gameObject.SetActive(false);
         enemyScriptableObjects.Clear();
         DrawCards();
     }
