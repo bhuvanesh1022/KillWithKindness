@@ -12,10 +12,13 @@ public class CardDisply : MonoBehaviour
     public TextMeshProUGUI multiply;
     public TextMeshProUGUI power;
     public Image img;
+
+    public Texture texture;
     // Start is called before the first frame update
     void Start()
     {
         name_text.text = card.power_name;
+        texture = card.texture;
         //int_text.text = card.power_number.ToString();
         img.sprite = card.card_image;
         power.text = card.cardPower;

@@ -21,4 +21,5 @@ MonoBehaviour:
   onassetiveness: 0
   onempathy: 0
   comment: If you put one more toe out of line, it's going on your transcripts.
+  texture: {fileID: 2800000, guid: 8a40cbd3c62294d7bac6c3352bb1ca1c, type: 3}
   impacton: 2

@@ -18,5 +18,6 @@ public class Card : ScriptableObject
     public string comment;
     public enum ImpactOn { Assetiveness, Empathy, none };
 
+    public Texture texture;
     public ImpactOn impacton;
 }

@@ -22,4 +22,5 @@ MonoBehaviour:
   onempathy: 0
   comment: Newton's Third Law states that every action has an equal an opposite reaction,
     but you wouldn't know that would you?
+  texture: {fileID: 2800000, guid: 0049847a392da460bb6574774956c390, type: 3}
   impacton: 2

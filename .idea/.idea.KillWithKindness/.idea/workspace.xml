@@ -20,22 +20,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d08cb0c-ac84-4771-9084-c325954f50f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Mat/Particle System.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Mat/Particle System.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Mat/dissolve.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Mat/dissolve.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 151 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 151 copy.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 152 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 152 copy.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 153 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Img/Group 153 copy.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mat/2DoutlineGlow.shadergraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mat/2DoutlineGlow.shadergraph.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mat/Assertivness.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mat/Assertivness.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mat/Empathy.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mat/Empathy.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mat/outline.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mat/outline.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/SpriteOutline.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/SpriteOutline.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/InitialScene.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/InitialScene/Global Volume Profile.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/InitialScene/Global Volume Profile.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KillWithKindness/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mat/UniversalRenderPipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mat/UniversalRenderPipelineAsset.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card_prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card_prefab.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/InitialScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InitialScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InitialSceneSettings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InitialSceneSettings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/New Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/New Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card 4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Jock/New_card.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card 4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Nerd/New_card.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card 4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Old Teacher/New_card.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack6.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Attack6.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Defence1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Defence1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Defence2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Defence2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Defence3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Defence3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Effects1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Effects1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Effects2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Effects2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Effects3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Player/Effects3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card 4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjets/Really/New_card.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Card.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardDisply.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardDisply.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drag.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +106,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CardRotation.cs" />
         <option value="$PROJECT_DIR$/Assets/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CardManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CardDisply.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Card.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Drag.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Drop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Card.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CardDisply.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Drag.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CardController.cs" />
       </list>
     </option>
@@ -141,7 +192,12 @@
       <workItem from="1607057777597" duration="822000" />
       <workItem from="1607073066789" duration="4447000" />
       <workItem from="1607142097937" duration="13238000" />
-      <workItem from="1607404630681" duration="3264000" />
+      <workItem from="1607404630681" duration="7226000" />
+      <workItem from="1607488688575" duration="2279000" />
+      <workItem from="1607585723906" duration="371000" />
+      <workItem from="1607747728597" duration="427000" />
+      <workItem from="1607919865219" duration="2333000" />
+      <workItem from="1608028975767" duration="2055000" />
     </task>
     <servers />
   </component>

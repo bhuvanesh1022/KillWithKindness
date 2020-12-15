@@ -441,7 +441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -285.1, y: 70.9}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 126.181274, y: 167.78845}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7753906670626864993
@@ -499,6 +499,7 @@ MonoBehaviour:
   multiply: {fileID: 2249850623733118743}
   power: {fileID: 6854615831788532522}
   img: {fileID: 7753906670626864994}
+  texture: {fileID: 0}
 --- !u!114 &2837038416001085330
 MonoBehaviour:
   m_ObjectHideFlags: 0

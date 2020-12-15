@@ -11,6 +11,16 @@ using Random = UnityEngine.Random;
 
 public class CardController : MonoBehaviour
 {
+    public int numberofturnsTaken = 0;
+    // animate the game object from -1 to +1 and back
+    public float minimum = 0.01f;
+    public float maximum = 0.20f;
+
+    // starting value for the Lerp
+    public float timeT = 0.2f;
+    
+    public Material mat;
+    public Material assertive_glow,empathy_glow;
     public int noOfCards;
     public int noOfCardsNeedToBeDrawn = 5;
     //[SerializeField] Button shuffleBtn;
@@ -45,7 +55,7 @@ public class CardController : MonoBehaviour
 
     public GameObject enemy_attack;
     public List<GameObject> enemy_card = new List<GameObject>();
-    public TextMeshProUGUI winnerText;
+    //public TextMeshProUGUI winnerText;
     
     public TextMeshProUGUI maxValueResistance;
     public TextMeshProUGUI maxValueEnthusiasm;
@@ -65,8 +75,13 @@ public class CardController : MonoBehaviour
     
     public Image player_comment_img;
     public TextMeshProUGUI player_comment;
+
+    public Image player_gameover_panel,enemy_gameover_panel;
+    
     void Start()
     {
+        assertive_glow.SetFloat("_Outline",0f);
+        empathy_glow.SetFloat("_Outline",0f);
         Assertivness.value = 1f;
         Empathy.value = 1f;
         EnemySlider.value = 20f;
@@ -88,6 +103,7 @@ public class CardController : MonoBehaviour
         enemyName.text = enemy_name[enemy_number];
         enemy_comment_img.gameObject.SetActive(false);
         player_comment_img.gameObject.SetActive(false);
+        enemy_gameover_panel.sprite = Enemy.sprite;
         DrawCards();
     }
     
@@ -105,23 +121,50 @@ public class CardController : MonoBehaviour
         {
             enemy_attack.SetActive(false);
             gameOverPanel.SetActive(true);
-            winnerText.text=
-                "You Have Won the Game";
-            
             Time.timeScale = 0;
         }
         else if(PlayerSlider.value == 0)
         {
             enemy_attack.SetActive(false);
             gameOverPanel.SetActive(true);
-            winnerText.text = "Opponent Won the Game";
-            
             Time.timeScale = 0;
         }
         else
         {
             gameOverPanel.SetActive(false);
-           
+        }
+
+        //StartCoroutine(Blink());
+        
+        //mat.SetFloat("_Outline", Mathf.Repeat(Time.time*Time.deltaTime,0.99f));
+        mat.SetFloat("_Outline",Mathf.Lerp(minimum,maximum,timeT));
+        timeT += 0.5f * Time.deltaTime;
+        if (timeT >0.2f)
+        {
+            float temp = maximum;
+            maximum = minimum;
+            minimum = temp;
+            timeT = 0.01f;
+        }
+    }
+
+    IEnumerator Blink()
+    {
+        if (mat.GetFloat("_Outline") >= 0.99f)
+        {
+            for (int i = 0; i < 0.99f; i++)
+            {
+                mat.SetFloat("_Outline",mat.GetFloat("_Outline"));
+                yield return new WaitForSeconds(0.05f);
+            }
+        }
+        if (mat.GetFloat("_Outline") <= 0)
+        {
+            for (int i = 1; i < 0.01f; i--)
+            {
+                mat.SetFloat("_Outline",mat.GetFloat("_Outline"));
+                yield return new WaitForSeconds(0.05f);
+            }
         }
     }
     public void Restart()
@@ -207,15 +250,20 @@ public class CardController : MonoBehaviour
         Debug.Log("called");
         confirmBtn.interactable = false;
         confirmBtn.gameObject.GetComponent<CanvasGroup>().alpha = 0f;
+        assertive_glow.SetFloat("_Outline",0f);
+        empathy_glow.SetFloat("_Outline",0f);
         StartCoroutine(I_OnCardChoose());
     }
     
     private IEnumerator I_OnCardChoose()
     {
         panel.SetActive(true);
+        
         string name = drop.card_choose[currentIndex].GetComponent<CardDisply>().card.power_name;
         int power = drop.card_choose[currentIndex].GetComponent<CardDisply>().card.power_number;
         Debug.Log(name + power);
+        mat.SetTexture("_MainTexture",drop.card_choose[currentIndex].GetComponent<CardDisply>().texture);
+        //mat.mainTexture("_MainTexture", drop.card_choose[currentIndex].GetComponent<CardDisply>().texture);
         card.GetComponent<Image>().sprite = drop.card_choose[currentIndex].GetComponent<Image>().sprite;
         card.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = name;
         card.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = power.ToString();
@@ -230,16 +278,17 @@ public class CardController : MonoBehaviour
         {
             if (drop.card_choose[currentIndex].GetComponent<CardDisply>().card.impacton == Card.ImpactOn.Assetiveness)
             {
+                assertive_glow.SetFloat("_Outline",1f);
                 power = power * (int) Assertivness.value;
                 card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power + " X Assetiveness";
             }
 
             if (drop.card_choose[currentIndex].GetComponent<CardDisply>().card.impacton == Card.ImpactOn.Empathy)
             {
+                empathy_glow.SetFloat("_Outline",1f);
                 power = power * (int) Empathy.value;
                 card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power + " X Empathy";
             }
-
             EnemySlider.value -= power;
             Debug.Log("HIT" + EnemySlider.value);
             attackPoint.gameObject.SetActive(true);
@@ -251,6 +300,7 @@ public class CardController : MonoBehaviour
         {
             if (drop.card_choose[currentIndex].GetComponent<CardDisply>().card.impacton == Card.ImpactOn.Assetiveness)
             {
+                assertive_glow.SetFloat("_Outline",1f);
                 power = power * (int) Assertivness.value;
                 card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text =
                     power + "X Assetiveness";
@@ -258,6 +308,7 @@ public class CardController : MonoBehaviour
 
             if (drop.card_choose[currentIndex].GetComponent<CardDisply>().card.impacton == Card.ImpactOn.Empathy)
             {
+                empathy_glow.SetFloat("_Outline",1f);
                 power = power * (int) Empathy.value;
                 card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power + "X Empathy";
             }
@@ -275,12 +326,14 @@ public class CardController : MonoBehaviour
                 drop.card_choose[currentIndex].card.onempathy == false)
             {
                 card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power + "+ Assertiveness";
+                assertive_glow.SetFloat("_Outline",0.7f);
                 Assertivness.value = Assertivness.value + 1;
             }
             else if (drop.card_choose[currentIndex].card.onempathy == true &&
                      drop.card_choose[currentIndex].card.onassetiveness == false)
             {
                 card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = power + "+ Empathy";
+                empathy_glow.SetFloat("_Outline",0.7f);
                 Empathy.value = Empathy.value + 1;
             }
             else if (drop.card_choose[currentIndex].card.onassetiveness &&
@@ -288,6 +341,8 @@ public class CardController : MonoBehaviour
             {
                 card.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text =
                     power + "+ Assertiveness" + power + "+ Empathy";
+                assertive_glow.SetFloat("_Outline",1f);
+                empathy_glow.SetFloat("_Outline",1f);
                 Assertivness.value = Assertivness.value + 1;
                 Empathy.value = Empathy.value + 1;
             }
@@ -310,35 +365,13 @@ public class CardController : MonoBehaviour
             currentIndex = 0;
             nextBtn.gameObject.SetActive(true);
         }
-        // else
-        // {
-        //     yield return new WaitForSeconds(1.5f);
-        //     currentIndex = 0;
-        //     confirmBtn.interactable = true;
-        //     confirmBtn.GetComponentInChildren<TextMeshProUGUI>().SetText("Confirm");
-        //     cardsInBin.AddRange(cardsInHand);
-        //     for (int i = 0; i < cardsInBin.Count; i++)
-        //     {
-        //         cardsInBin[i].GetComponent<CardManager>().cardState = CardManager.CardState.InBin;
-        //         cardsInBin[i].transform.position = t.localPosition;
-        //         cardsInBin[i].GetComponent<Drag>().return_to_parent = null;
-        //         cardsInBin[i].GetComponent<Transform>().SetParent(null);
-        //     }
-        //     cardsInHand.Clear();
-        //     drop.card_choose.Clear();
-        //     panel.SetActive(false);
-        //     confirmBtn.gameObject.GetComponent<CanvasGroup>().alpha = 1f;
-        //     confirmBtn.interactable = true;
-        //     attackPoint.gameObject.SetActive(false);
-        //     healPoint.gameObject.SetActive(false);
-        //     player_comment_img.gameObject.SetActive(false);
-        //     StartCoroutine(Enemy_Card());
-        // }        
     }
 
     public void PlayerClose()
     {
         nextBtn.gameObject.SetActive(false);
+        assertive_glow.SetFloat("_Outline",0f);
+        empathy_glow.SetFloat("_Outline",0f);
         cardsInBin.AddRange(cardsInHand);
         for (int i = 0; i < cardsInBin.Count; i++)
         {
@@ -404,6 +437,7 @@ public class CardController : MonoBehaviour
             card.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text=name;
             card.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text=number.ToString();
             card.GetComponent<Image>().sprite = enemyScriptableObjects[random].card_image;
+            mat.SetTexture("_MainTexture",enemyScriptableObjects[random].texture);
             
             if (power.ToString() == "Attack")
             {
@@ -438,7 +472,13 @@ public class CardController : MonoBehaviour
         enemy_attack.SetActive(false);
         enemy_comment_img.gameObject.SetActive(false);
         enemyScriptableObjects.Clear();
+        numberofturnsTaken += 1;
         DrawCards();
     }
-    
+
+    IEnumerator BattleEndPoints()
+    {
+        yield return new WaitForSeconds(2f);
+        
+    }
 }
